@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3D FPS Game</title>
+  <style>
+    body { margin: 0; overflow: hidden; }
+    canvas { display: block; }
+    #menu {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+    #hud {
+      position: absolute;
+      top: 10px; left: 10px;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      display: none;
+      z-index: 5;
+    }
+    #hud button {
+      margin-left: 20px;
+      font-size: 16px;
+    }
+    #crosshair {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px; height: 10px;
+      border: 2px solid white;
+      border-radius: 50%;
+      display: none;
+      z-index: 5;
+    }
+  </style>
+</head>
+<body>
+  <div id="menu">
+    <h1>3D FPS Game</h1>
+    <label>Choose Gun:
+      <select id="gunSelect">
+        <option value="Pistol">Pistol</option>
+        <option value="Rifle">Rifle</option>
+        <option value="Shotgun">Shotgun</option>
+        <option value="Sniper">Sniper</option>
+        <option value="SMG">SMG</option>
+      </select>
+    </label><br/>
+    <label>Enemies:
+      <input id="enemyCount" type="number" value="10" min="1" max="100"/>
+    </label><br/>
+    <button onclick="startGame()">Start Game</button>
+  </div>
+  <div id="hud">Health: <span id="health">100</span>
+    <button onclick="exitGame()">Exit</button>
+  </div>
+  <div id="crosshair"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/PointerLockControls.js"></script>
+  <script>
+    // JavaScript game logic here...
+  </script>
+</body>
+</html>
